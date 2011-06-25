@@ -1,0 +1,12 @@
+<p id="alert"><%= alert %></p>
+<div id="login-form">
+  <form method="post">
+    <label>Email</label><br/>
+    <%= text_field_tag 'email', params[:email] %><br/>
+
+    <label>Senha</label><br/>
+    <%= password_field_tag 'pass', params[:pass] %><br/>
+
+    <input type="submit" value="Enviar" />
+  </form>
+</div>

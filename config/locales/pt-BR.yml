@@ -1,0 +1,84 @@
+pt-BR:
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%d-%m-%Y"
+      short: "%b %d"
+      long: "%d de %B de %Y"
+
+    day_names: [Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+    abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sab]
+
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, Janeiro, Fevereior, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+    abbr_month_names: [~, Jan, Feb, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+    # Used in date_select and datetime_select.
+    order:
+      - :year
+      - :month
+      - :day
+
+  time:
+    formats:
+      default: "%a, %d-%m-%Y %H:%M:%S %z"
+      short: "%d-%m-%Y %H:%M"
+      long: "%d de %B de %Y às %H:%M"
+    am: "am"
+    pm: "pm"
+
+# Used in array.to_sentence.
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " e "
+      last_word_connector: ", e "
+
+  helpers:
+    submit:
+      create: "Criar %{model}"
+      update: "Confirmar mudanças para %{model}"
+    save: "Salvar"
+    cancel: "Cancelar"
+    
+  activerecord:
+    models:
+      user: "Usuário"
+      
+    attributes:
+      _all:
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+        
+      user:
+        name: "Nome"
+        pass: "Senha"
+
+    errors:
+      template:
+        header:
+          one: "não foi possivel atualizar o modelo: 1 erro"
+          other: "não foi possivel atualizar o modelo: %{count} erros."
+        body: "Por favor cheque os seguintes campos:"
+      messages:
+        accepted: "acception required"
+        attachment_presence: "deve ser anexado"
+        blank: "deve ser preenchido"
+        confirmation: "confirmação não equivalente"
+        empty: "deve ser preenchido"
+        equal_to: "Requerido igual a %{count}"
+        even: "par requerido"
+        exclusion: "indisponível"
+        greater_than: "Requerido maior do que %{count}"
+        greater_than_or_equal_to: "Requerido maior que ou igual a %{count}"
+        inclusion: " não está incluido na lista"
+        invalid: "inválido"
+        less_than: "Requerido menor que %{count}"
+        less_than_or_equal_to: "Requerido menor que ou igual a %{count}"
+        not_a_number: "não é um número"
+        odd: "ímpar requerido"
+        taken: "indisponível"
+        too_long: "muito longo (não é possível usar mais de %{count} characteres)"
+        too_short: "muito curto (não é possível usar menos de %{count} characteres)"
+        wrong_length: "Tamanho errado (%{count} são requeridos)"
