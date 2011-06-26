@@ -1,5 +1,8 @@
+<% content_for :javascripts, javascript_include_tag('products_index') %>
+
 <h1>Lista de produtos</h1>
 
+Filtrar produtos: <input id="filter" />
 <table>
   <tr>
     <th>Nome</th>
@@ -12,11 +15,10 @@
 
 <% @products.each do |product| %>
   <tr>
-    <td><%= product.name %></td>
+    <td class="product-name"><%= link_to product.name, product %></td>
     <td><%= product.price %></td>
     <td><%= product.quant %></td>
     <td><%= link_to 'Dar baixa', baixa_product_path(product) %></td>
-    <td><%= link_to 'Mostrar', product %></td>
     <td><%= link_to 'Editar', edit_product_path(product) %></td>
     <td><%= link_to 'Remover', product, :confirm => 'Cofirma?', :method => :delete %></td>
   </tr>
