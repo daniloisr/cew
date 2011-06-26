@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
 
+<strong><%= @product.name %></strong> quantidade:<%= @product.quant %>
 <%= form_tag baixa_product_path(@product), :method => :post %>
   Quantida a dar baixar: <input type="text" name="baixa" /><br/>
   <input type="submit" value="Dar baixa" />

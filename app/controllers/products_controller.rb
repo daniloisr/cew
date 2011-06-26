@@ -86,9 +86,14 @@ class ProductsController < ApplicationController
   def baixa
     @product = Product.find(params[:id])
     if params[:baixa]
-      @product.quant -= params[:baixa].to_f
-      @product.save
-      flash[:notice] = "Quantidade de produtos abaixada com sucesso"
+      if @product.quant - params[:baixa].to_f < 0
+        flash[:alert] = "Quantidade de produtos insuficiente para dar baixa"
+      else
+        @product.quant -= params[:baixa].to_f
+        @product.save
+        flash[:notice] = "Quantidade de produtos alterada com sucesso"
+      end
+      redirect_to baixa_product_path(@product)
     end
   end
 end
