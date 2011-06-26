@@ -9,6 +9,17 @@
 </head>
 <body>
 
+<% if session[:user] %>
+<ul id="usermenu">
+  <li><a href="/logout">Logout</a>
+</ul>
+
+<ul id="menu">
+  <li><%= link_to "Usuários", users_path %>
+  <li><%= link_to "Produtos", products_path %>
+</ul>
+<% end %>
+
 <%= yield %>
 
 </body>

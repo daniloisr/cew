@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_filter :authenticate
+  
   # GET /products
   # GET /products.xml
   def index
@@ -44,7 +46,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to(@product, :notice => 'Product was successfully created.') }
+        format.html { redirect_to(@product, :notice => 'Produto criado com sucesso.') }
         format.xml  { render :xml => @product, :status => :created, :location => @product }
       else
         format.html { render :action => "new" }
@@ -60,7 +62,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to(@product, :notice => 'Product was successfully updated.') }
+        format.html { redirect_to(@product, :notice => 'Produto alterado com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,6 +80,15 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(products_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  def baixa
+    @product = Product.find(params[:id])
+    if params[:baixa]
+      @product.quant -= params[:baixa].to_f
+      @product.save
+      flash[:notice] = "Quantidade de produtos abaixada com sucesso"
     end
   end
 end

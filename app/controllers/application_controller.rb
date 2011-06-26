@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate
     if session[:user].nil?
-      redirect_to login_path, :notice => "Você deve estar logado para visualizar essa página"
+      redirect_to login_path, :alert => "Você deve estar logado para visualizar essa página"
     end
   end
 end

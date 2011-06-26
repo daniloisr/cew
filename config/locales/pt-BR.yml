@@ -45,6 +45,7 @@ pt-BR:
   activerecord:
     models:
       user: "Usuário"
+      product: "Produto"
       
     attributes:
       _all:
@@ -54,6 +55,11 @@ pt-BR:
       user:
         name: "Nome"
         pass: "Senha"
+        
+      product:
+        name: "Nome"
+        price: "Preço"
+        quant: "Quantidade"
 
     errors:
       template:

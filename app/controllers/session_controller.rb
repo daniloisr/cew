@@ -20,6 +20,8 @@ class SessionController < ApplicationController
   end
 
   def logout
+    session[:user] = nil
+    redirect_to login_path
   end
 
   private

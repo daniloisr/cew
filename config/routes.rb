@@ -1,9 +1,15 @@
 Cew::Application.routes.draw do
-  resources :products
+  resources :products do
+    member do
+      get 'baixa'
+      post 'baixa'
+    end
+  end
 
   resources :users
 
   match 'login' => 'session#login', :as => :login
+  match 'logout' => 'session#logout', :as => :logout
 
   root :to => "users#index", :as => :home
   # The priority is based upon order of creation:
