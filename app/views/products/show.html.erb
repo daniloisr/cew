@@ -15,6 +15,10 @@
   <%= @product.quant %>
 </p>
 
+<p>
+  <b>Categoria:</b>
+  <%= @product.category %>
+</p>
 
 <%= link_to 'Editar', edit_product_path(@product) %> |
 <%= link_to 'Voltar', products_path %>

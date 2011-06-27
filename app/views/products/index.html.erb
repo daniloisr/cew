@@ -8,6 +8,7 @@ Filtrar produtos: <input id="filter" />
     <th>Nome</th>
     <th>Preço</th>
     <th>Quantidade</th>
+    <th>Categoria</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,6 +19,7 @@ Filtrar produtos: <input id="filter" />
     <td class="product-name"><%= link_to product.name, product %></td>
     <td><%= product.price %></td>
     <td><%= product.quant %></td>
+    <td><%= product.category %></td>
     <td><%= link_to 'Dar baixa', baixa_product_path(product) %></td>
     <td><%= link_to 'Editar', edit_product_path(product) %></td>
     <td><%= link_to 'Remover', product, :confirm => 'Cofirma?', :method => :delete %></td>

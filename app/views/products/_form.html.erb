@@ -1,3 +1,6 @@
+<% content_for :stylesheets, stylesheet_link_tag('product_form') %>
+<% content_for :javascripts, javascript_include_tag('product_form') %>
+
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -22,6 +25,10 @@
   <div class="field">
     <%= f.label :quant %><br />
     <%= f.text_field :quant %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.select :category, Product.categories %> <a href="#" title="Adicionar uma categoria" id="new_category">[+]</a>
   </div>
   <div class="actions">
     <%= f.submit %>
