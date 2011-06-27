@@ -1,4 +1,13 @@
 pt-BR:
+  log:
+    products: "Produtos"
+    users: "Usuários"
+    index: "visualizou a lista de"
+    show: "visualizou um"
+    update: "editou um"
+    create: "criou um"
+    destroy: "removeu um"
+  
   date:
     formats:
       # Use the strftime parameters for formats.
@@ -61,6 +70,9 @@ pt-BR:
         category: "Categoria"
         price: "Preço"
         quant: "Quantidade"
+        
+      log:
+        message: "Mensagem"
 
     errors:
       template:

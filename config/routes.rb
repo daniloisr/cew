@@ -1,4 +1,6 @@
 Cew::Application.routes.draw do
+  resources :logs
+
   resources :products do
     member do
       get 'baixa'

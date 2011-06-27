@@ -1,0 +1,23 @@
+<h1>Lista de logs</h1>
+
+<table>
+  <tr>
+    <th>Dia</th>
+    <th>Horário</th>
+    <th>Mensagem</th>
+    <th>Ações</th>
+  </tr>
+
+<% @logs.each do |log| %>
+  <tr>
+    <td><%= log.created_at.strftime("%d/%m/%y") %></td>
+    <td><%= log.created_at.strftime("%H:%M") %></td>
+    <td><%= log.message %></td>
+    <td><%= link_to 'Visualizar', log %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @logs %>
+
+<br/>

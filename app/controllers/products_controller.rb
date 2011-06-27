@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_filter :authenticate
+  before_filter :log, :only => [:index, :show, :update, :create, :destroy]
   
   # GET /products
   # GET /products.xml

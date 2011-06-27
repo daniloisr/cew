@@ -1,6 +1,7 @@
 # coding: utf-8
 class UsersController < ApplicationController
   before_filter :authenticate
+  before_filter :log, :only => [:index, :show, :update, :create, :destroy]
   # GET /users
   # GET /users.xml
   def index

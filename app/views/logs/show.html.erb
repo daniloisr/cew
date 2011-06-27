@@ -1,0 +1,14 @@
+<h1>Visualizando Log</h1>
+
+<p>
+  <b>Mensagem:</b>
+  <%= @log.message %>
+</p>
+
+<p>
+  <b>Criado em:</b>
+  <%= I18n.l @log.created_at, :format => :long %>
+</p>
+
+
+<%= link_to 'Voltar', logs_path %>
