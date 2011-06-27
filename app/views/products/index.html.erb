@@ -2,7 +2,12 @@
 
 <h1>Lista de produtos</h1>
 
-Filtrar produtos: <input id="filter" />
+Filtrar produtos: Por Nome <input id="filter" /> Por Categoria
+<%= form_tag products_path, :method => 'get', :style => 'display: inline' %>
+  <%= select_tag :category, options_for_select(['Todas'].concat(Product.categories)), :style => "min-width: 100px" %>
+  <input type="submit" value="buscar" />
+</form>
+
 <table>
   <tr>
     <th>Nome</th>

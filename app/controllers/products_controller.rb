@@ -5,7 +5,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.xml
   def index
-    @products = Product.all
+    if params[:category] and params[:category] != 'Todas'
+      @products = Product.by_category(params[:category])
+    else
+      @products = Product.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
