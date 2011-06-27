@@ -1,10 +1,13 @@
+<h1>Baixa em estoque do produto <%= @product.name %></h1>
+
 <p id="notice"><%= notice %></p>
 <p id="alert"><%= alert %></p>
 
-<strong><%= @product.name %></strong> quantidade:<%= @product.quant %>
+Quantidade atual: <%= @product.quant %>
 <%= form_tag baixa_product_path(@product), :method => :post %>
   Quantida a dar baixar: <input type="text" name="baixa" /><br/>
   <input type="submit" value="Dar baixa" />
 </form>
 
+<br/>
 <%= link_to 'Voltar', products_path %>

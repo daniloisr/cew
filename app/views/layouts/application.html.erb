@@ -10,6 +10,7 @@
 </head>
 <body>
 
+<div id="content">
 <% if session[:user] %>
 <ul id="usermenu">
   <li><a href="/logout">Logout</a>
@@ -19,9 +20,17 @@
   <li><%= link_to "Usuários", users_path %>
   <li><%= link_to "Produtos", products_path %>
 </ul>
+
+<div class="clear"></div>
 <% end %>
 
 <%= yield %>
 
+<div id="rodape">
+  CEW - <strong>C</strong>ontrole de <strong>E</strong>stoque <strong>W</strong>eb<br/>
+  Trabalho final de projeto de Software<br/>
+  Alunos: Danilo, Jorge, Paulo e Nícolas
+</div>
+</div>
 </body>
 </html>

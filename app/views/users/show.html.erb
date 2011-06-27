@@ -1,7 +1,9 @@
+<h1>Visualizando Usuário</h1>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Nome:</b>
   <%= @user.name %>
 </p>
 
@@ -10,11 +12,5 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <b>Pass:</b>
-  <%= @user.pass %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Voltar', users_path %>
